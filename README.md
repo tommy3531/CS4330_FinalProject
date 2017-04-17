@@ -1,7 +1,6 @@
 <h1> Project for CS 4330 at Mizzou </h1>
 <h4>Compare C++ to Swift </h4>
-![a link] (https://github.com/tommy3531/CS4330_FinalProject/blob/master/CS4330_SwiftProject/README.md "Project Details")
-<h1> Team Members</h1>
+Markup : ![picture alt](http://www.brightlightpictures.com/assets/images/portfolio/thethaw_header.jpg "Title is optional")<h1> Team Members</h1>
 <h4> Tom Marler </h4>
 <h4> Nicolle Lenzmeier</h4>
 <h4> Matt Barmann</h4>
