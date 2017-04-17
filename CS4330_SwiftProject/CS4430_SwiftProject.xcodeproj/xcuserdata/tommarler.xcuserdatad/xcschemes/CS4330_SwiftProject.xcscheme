@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "352FCC0D1EA527E800A09AFD"
-               BuildableName = "CS4330_SwiftProject.app"
-               BlueprintName = "CS4330_SwiftProject"
-               ReferencedContainer = "container:CS4330_SwiftProject.xcodeproj">
+               BuildableName = "CS4430_SwiftProject.app"
+               BlueprintName = "CS4430_SwiftProject"
+               ReferencedContainer = "container:CS4430_SwiftProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "352FCC241EA527E900A09AFD"
-               BuildableName = "CS4330_SwiftProjectTests.xctest"
-               BlueprintName = "CS4330_SwiftProjectTests"
-               ReferencedContainer = "container:CS4330_SwiftProject.xcodeproj">
+               BuildableName = "CS4430_SwiftProjectTests.xctest"
+               BlueprintName = "CS4430_SwiftProjectTests"
+               ReferencedContainer = "container:CS4430_SwiftProject.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "352FCC2F1EA527E900A09AFD"
-               BuildableName = "CS4330_SwiftProjectUITests.xctest"
-               BlueprintName = "CS4330_SwiftProjectUITests"
-               ReferencedContainer = "container:CS4330_SwiftProject.xcodeproj">
+               BuildableName = "CS4430_SwiftProjectUITests.xctest"
+               BlueprintName = "CS4430_SwiftProjectUITests"
+               ReferencedContainer = "container:CS4430_SwiftProject.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "352FCC0D1EA527E800A09AFD"
-            BuildableName = "CS4330_SwiftProject.app"
-            BlueprintName = "CS4330_SwiftProject"
-            ReferencedContainer = "container:CS4330_SwiftProject.xcodeproj">
+            BuildableName = "CS4430_SwiftProject.app"
+            BlueprintName = "CS4430_SwiftProject"
+            ReferencedContainer = "container:CS4430_SwiftProject.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "352FCC0D1EA527E800A09AFD"
-            BuildableName = "CS4330_SwiftProject.app"
-            BlueprintName = "CS4330_SwiftProject"
-            ReferencedContainer = "container:CS4330_SwiftProject.xcodeproj">
+            BuildableName = "CS4430_SwiftProject.app"
+            BlueprintName = "CS4430_SwiftProject"
+            ReferencedContainer = "container:CS4430_SwiftProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "352FCC0D1EA527E800A09AFD"
-            BuildableName = "CS4330_SwiftProject.app"
-            BlueprintName = "CS4330_SwiftProject"
-            ReferencedContainer = "container:CS4330_SwiftProject.xcodeproj">
+            BuildableName = "CS4430_SwiftProject.app"
+            BlueprintName = "CS4430_SwiftProject"
+            ReferencedContainer = "container:CS4430_SwiftProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
