@@ -1,5 +1,5 @@
-H1 Project for CS 4430 at Mizzou
+<h1> Project for CS 4430 at Mizzou
 - Compare C++ to Swift 
 
-H3 Team Members
-H2 Tom Marler H2 Nicolle Lenzmeier
+<h3> Team Members
+<h2> Tom Marler <h2> Nicolle Lenzmeier
