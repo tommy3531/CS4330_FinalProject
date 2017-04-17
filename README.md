@@ -1,4 +1,4 @@
-<h1> Project for CS 4430 at Mizzou </h1>
+<h1> Project for CS 4330 at Mizzou </h1>
 <h4>Compare C++ to Swift </h4>
 
 <h1> Team Members</h1>
