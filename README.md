@@ -4,3 +4,4 @@
 <h1> Team Members</h1>
 <h4> Tom Marler </h4>
 <h4> Nicolle Lenzmeier</h4>
+<h4> Matt Barmann</h4>
