@@ -1,15 +1,10 @@
 <h1> Project for CS 4330 at Mizzou </h1>
 <h4>Compare C++ to Swift </h4>
-[Project Details](https://github.com/tommy3531/CS4330_FinalProject/blob/master/CS4330_SwiftProject/RE)
+[Project Details](https://github.com/tommy3531/CS4330_FinalProject/blob/master/CS4330_SwiftProject/README.md)
 <h1> Team Members</h1>
 <h4> Tom Marler </h4>
 <h4> Nicolle Lenzmeier</h4>
 <h4> Matt Barmann</h4>
-# Comparing C++ to Swift 3
-
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-Swift 3 is a new Open Source language that was created by Apple in 2002.
 
   - Language Purpose
   - Unique features
