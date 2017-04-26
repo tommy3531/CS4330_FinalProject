@@ -24,6 +24,9 @@ Swift 3 is a new Open Source language that was created by Apple in 2002.
   - Procdural Programming
   - Functional Programming
   - Multithreading
+  - 
+  
+---
 
 # Language Purpose
 Swift 3: Explain the language and why it was created
@@ -33,6 +36,8 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+
+---
 # Unique features
 Explain the unique features: 
 ```sh
@@ -41,6 +46,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 # Name spaces
 1. How are name spaces implemented?
     - To access items in one namespace from another we must first import the module             using the import declaration.   The import delcaration consists of the import           keyword followed by the module name.  
@@ -60,13 +66,7 @@ $ node app
         import UIKit.NSData
         ```
 
-Explain how Name spaces work: 
-```
-This is used to write an example
-cd dillinger
-npm install -d
-node app
-```
+---
 ### Types
 Explain Types: 
 ```sh
