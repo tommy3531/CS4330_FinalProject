@@ -1,4 +1,6 @@
 # Comparing C++ to Swift 3
+(https://iswift.org/cookbook/declare-a-closure)
+(https://code.tutsplus.com/tutorials/swift-from-scratch-an-introduction-to-classes-and-structures--cms-23197)
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
@@ -67,7 +69,7 @@ $ node app
         ```
 
 ---
-### Types
+### Types (https://cocoacasts.com/value-types-and-reference-types-in-swift/)
 Within a given program a program needs to use types to store different information inside variables.  Variables are nothing but reserved memory locations to store values.  A programmer may store information of various data types likes string, character, integer, floating point and boolean.  Based on the data type of a variable the operating system allocates memory and decides what can be stored in the reserved memory. Swift has the following Types
 1. Built-in Data Types
     - Int or UInt
@@ -144,11 +146,11 @@ Within a given program a program needs to use types to store different informati
 
 9. Type Erasure
     - Explain:
-10. Type Methods
+10. Type Methods (http://stackoverflow.com/questions/24087936/how-do-i-make-class-methods-properties-in-swift)
     - Explain
 
 ---
-### Classes
+### Classes (http://rshankar.com/difference-between-struct-and-class-in-swift/)
 A class is a blueprint and is used to create objects, classes can have           properties to store values and methods to add behavior.  In swift 3 classes      can have 2 types of properties stored and computed.  
 
 ---
@@ -188,7 +190,7 @@ Explain Instance References:
 
 
 ---
-### Interface / Protoclo
+### Interface / Protoclo (https://medium.com/ios-os-x-development/introduction-to-protocols-in-swift-3-73f9a9be6b15)
 Explain Protocols: 
 ```sh
 $ This is used to write an example
