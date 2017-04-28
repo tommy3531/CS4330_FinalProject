@@ -136,47 +136,58 @@ Within a given program a program needs to use types to store different informati
 8. Value Type (http://blog.stablekernel.com/when-to-use-value-types-and-reference-types-in-swift)
     - a value type contains data and a reference type contains the location in memory where data lives
         - Structs
-            ```
-            ```
+
         - Enums
-            ```
-            ```
+
         - Tuples
-            ```
-            ```
+
 
 9. Type Erasure
     - Explain:
-    ```
-    ```
+10. Type Methods
+    - Explain
+
+---
 ### Classes
-    A class is a blueprint and is used to create objects, classes can     have properties to store values and methods to add behavior.  In swift 3 classes can have 2 types of properties stored and computed.  
-```sh
-$ This is used to write an example
-$ cd dillinger
-$ npm install -d
-$ node app
-```
+A class is a blueprint and is used to create objects, classes can have           properties to store values and methods to add behavior.  In swift 3 classes      can have 2 types of properties stored and computed.  
+
+---
 ### Instance references
 Explain Instance References: 
-```sh
-$ This is used to write an example
-$ cd dillinger
-$ npm install -d
-$ node app
-```
+
+---
 ### Properties (http://www.aidanf.net/learn-swift/classes)
-    - Store properties 
-        - Declared using var or let and given an initial value
-    - Computed properties
-        - Are also declared with var but instead of an initial value you assign a function to calculate the value.  You must delcare the type for a computed property
-Explain Properties: 
-```sh
-$ This is used to write an example
-$ cd dillinger
-$ npm install -d
-$ node app
-```
+- Store properties 
+    - Declared using var or let and given an initial value
+- Computed properties
+    - Are also declared with var but instead of an initial value you assign a         function to calculate the value.  You must delcare the type for a                computed property
+- Lazy Store Properties
+    - Lazy properties are always declared using the var keyword. You can declare     a stored property lazy if you want to defer their initialization.  The value     of an lazy property won’t be calculated until the first time it is accessed.     For example, say you had a stored property performs a network call to get its     initial value. Instead of having this happen when the object is initialized,     you can have it happen when the property is first accessed by declaring the      property as lazy.
+    ```
+    lazy var shippingCosts = downloadShippingData()
+    ```
+    
+- Property callbacks
+    - We can also attach a function to a stored property and have it called          whenever the value of that property is about to change. These are called         property observers.
+    There are 2 observers that you can define: willSet gets called before the        variable changes, and didSet gets called after the variable has changed.
+    ```
+    class ObservedCirlce {
+        var radius:Double = 1.0 {
+            willSet{
+                print(”Radius is changing from \(radius) to \(newValue).”)
+            }
+        }
+        var area:Double {
+            return(3.14 * radius * radius)
+        }
+   }
+    var oc = ObservedCirlce()
+    oc.radius = 2.5 // prints "Radius is changing from 1.0 to 2.5."
+    oc.area // 19.625
+    ```
+
+
+---
 ### Interface / Protoclo
 Explain Protocols: 
 ```sh
@@ -185,9 +196,11 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### Inheritance / extensions
 Explain Inheritance:
 Explain extensions:
+
 
 ```sh
 $ This is used to write an example
@@ -195,6 +208,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### Reflection
 Explain Reflection:
 ```sh
@@ -203,6 +217,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### Memory management
 Explore Memory management: 
 ```sh
@@ -211,6 +226,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### Comparisons of references and values
 Explain references and values: 
 ```sh
@@ -219,6 +235,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### NUll/nil references
 Explain NULL references: 
 ```sh
@@ -227,6 +244,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### Errors and execption handling
 Explain Errors: 
 ```sh
@@ -235,6 +253,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### lambda expressions, closures or functions as types
 Explain Lambda:
 Explain closures: 
@@ -245,6 +264,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### Implementation of listeners and event handlers
 Explain listeners:
 Explain event handlers:
@@ -254,6 +274,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### Singleton
 Explain singleton:
 ```sh
@@ -262,6 +283,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### Procdural Programming
 Explain Procedural Programming: 
 ```sh
@@ -270,6 +292,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### Functional Programming
 Explain functional Programming:
 ```sh
@@ -278,6 +301,7 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
+---
 ### Multithreading
 Explain Multithreading: 
 ```sh
