@@ -53,7 +53,7 @@ $ node app
         ```
         import moduleName
         ```
-2. How are names spaces used?
+2. How are name spaces used?
     - A namespace acts as a border/boundary and another namespace can not access               another namespace  without mentioning it first.  Name spaces provides a virtual         partition seperating the names in one namespace from names in another.  By              creating this seperation two items can be declared with the same name                   as long as they are in different namespaces.  In Swift namespaces are used as a         boundary when a import declaration is used within a .swift file.  For example,          if I was using Alamofire to make rest calls to an API, I would import the               module, which gives the current file access to Alamofire.  
 
         ```
@@ -68,15 +68,89 @@ $ node app
 
 ---
 ### Types
-Explain Types: 
-```sh
-$ This is used to write an example
-$ cd dillinger
-$ npm install -d
-$ node app
-```
+Within a given program a program needs to use types to store different information inside variables.  Variables are nothing but reserved memory locations to store values.  A programmer may store information of various data types likes string, character, integer, floating point and boolean.  Based on the data type of a variable the operating system allocates memory and decides what can be stored in the reserved memory. Swift has the following Types
+1. Built-in Data Types
+    - Int or UInt
+        - This is used for whole numbers, you can use Int32, Int64 to define 32 
+          bit signed integer.
+    - Float
+        - This is used to represent a 32-bit floating-point number and numbers with smaller decimals points. Example, 3.14159, 0.1, and -273.158
+    - Double
+        - This is used to represent a 64-bit floating-point number and used when floating-point values must be very large.  Example, 3.14159, 0.1, -273.158
+    - Boolean
+        - This represents a boolean value which is either true or false
+    - String 
+        - This is an ordered collection of characters, Example Hello,World
+    - Character - This is a single-character string literal. Example, "C"
+    - Optional
+        - This represents a variable that can hold either a value or no value
+2. Bound Values
+    |Type     |Typical Bit Width|Typical Range|
+   |----------|:--------------:|------------:|
+   |Int8      | 1 byte         |-127 to 127  |
+   |UInt8     | 1 byte         |0 to 255     |
+   |Int32     | 4 btyes        |-2147483648 to 2147483647|              
+   |UInt32    | 4 bytes        |0 to 4294967295 |
+   |Int64     | 8 bytes        |-9223372036854775808 to 9223372036854775807|
+   |UInt64    | 8 bytes        |0 to 18446744073709551615|
+   |Float     | 4 bytes        |1.2E-38 to 3.4E+38 (~6 digits)|
+   |Double    | 8 bytes        |2.3E-308 to 1.7E+308 (~15 digits)|
+3. Type Aliases
+    - Gives the programmer the ability to create a new name for an exisitng type
+    ```sh
+    typealias newName = type
+    typealias Feet = Int
+    var distance: Feet = 100
+    print(distance)
+    output: 100
+    ```
+4. Type Safety
+    - Type-safe help ensures a variable that is declaraed as string can and will only expect a string value.  Swift performs type-checks at complie time and will flag any mismatches types as errors.
+    ```
+    var holdInt = 42
+    holdInt = "This is forty-two"
+    print(holdInt)
+    output: Complie time error
+    ```
+5. Type Inference (https://www.raywenderlich.com/143885/swift-tutorial-part-2-types-operations)
+    - Enables a comp
+    ```
+    ```
+    
+6. Collection Types (https://learn.co/lessons/swift-collection-types)
+    - Explain:
+    ```
+    ```
+7. Reference Types (https://medium.com/capital-one-developers/reference-and-value-types-in-swift-de792db330b2)
+    - Classes and closures
+    -  I believe the best way to understand reference types is by initializaing a class and passing the class object to a function.  The function that the class object is passed to returns a reference to the same existing class object instance. The instance of the class object is referecing the location in memory.
+    ```
+    class Person {
+        var name: String
+        init(name: String) {
+            self.name = name
+        }
+    }
+    var person = Person(name: "Michael Jackson")
+    ```
+8. Value Type (http://blog.stablekernel.com/when-to-use-value-types-and-reference-types-in-swift)
+    - a value type contains data and a reference type contains the location in memory where data lives
+        - Structs
+            ```
+            ```
+        - Enums
+            ```
+            ```
+        - Tuples
+            ```
+            ```
+
+9. Type Erasure
+    - Explain:
+    ```
+    ```
 ### Classes
-Explain Classes: 
+    A class is a blueprint and is used to create objects, classes can     have properties to store values and methods to add behavior.  In swift 3 classes can have 2 types of properties stored and computed.  
 ```sh
 $ This is used to write an example
 $ cd dillinger
@@ -91,7 +165,11 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
-### Properties
+### Properties (http://www.aidanf.net/learn-swift/classes)
+    - Store properties 
+        - Declared using var or let and given an initial value
+    - Computed properties
+        - Are also declared with var but instead of an initial value you assign a function to calculate the value.  You must delcare the type for a computed property
 Explain Properties: 
 ```sh
 $ This is used to write an example
@@ -208,149 +286,3 @@ $ cd dillinger
 $ npm install -d
 $ node app
 ```
-
-
-
-
-
-Dillinger uses a number of open source projects to work properly:
-
-* [AngularJS] - HTML enhanced for web apps!
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [Breakdance](http://breakdance.io) - HTML to Markdown converter
-* [jQuery] - duh
-
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-
-### Installation
-
-Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
-
-Install the dependencies and devDependencies and start the server.
-
-
-
-For production environments...
-
-```sh
-$ npm install --production
-$ npm run predeploy
-$ NODE_ENV=production node app
-```
-
-### Plugins
-
-Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
-
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md] [PlDb] |
-| Github | [plugins/github/README.md] [PlGh] |
-| Google Drive | [plugins/googledrive/README.md] [PlGd] |
-| OneDrive | [plugins/onedrive/README.md] [PlOd] |
-| Medium | [plugins/medium/README.md] [PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md] [PlGa] |
-
-
-### Development
-
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantanously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
-```sh
-$ node app
-```
-
-Second Tab:
-```sh
-$ gulp watch
-```
-
-(optional) Third:
-```sh
-$ karma test
-```
-#### Building for source
-For production release:
-```sh
-$ gulp build --prod
-```
-Generating pre-built zip archives for distribution:
-```sh
-$ gulp build dist --prod
-```
-### Docker
-Dillinger is very easy to install and deploy in a Docker container.
-
-By default, the Docker will expose port 80, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.
-
-```sh
-cd dillinger
-docker build -t joemccann/dillinger:${package.json.version}
-```
-This will create the dillinger image and pull in the necessary dependencies. Be sure to swap out `${package.json.version}` with the actual version of Dillinger.
-
-Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 8000 of the host to port 80 of the Docker (or whatever port was exposed in the Dockerfile):
-
-```sh
-docker run -d -p 8000:8080 --restart="always" <youruser>/dillinger:${package.json.version}
-```
-
-Verify the deployment by navigating to your server address in your preferred browser.
-
-```sh
-127.0.0.1:8000
-```
-
-#### Kubernetes + Google Cloud
-
-See [KUBERNETES.md](https://github.com/joemccann/dillinger/blob/master/KUBERNETES.md)
-
-
-### Todos
-
- - Write MOAR Tests
- - Add Night Mode
-
-License
-----
-
-MIT
-
-
-**Free Software, Hell Yeah!**
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
-
-
-   [dill]: <https://github.com/joemccann/dillinger>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
-
-   [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
-   [PlGh]: <https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md>
-   [PlGd]: <https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md>
-   [PlOd]: <https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md>
-   [PlMe]: <https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md>
-   [PlGa]: <https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md>
