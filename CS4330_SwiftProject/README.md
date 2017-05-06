@@ -3,6 +3,7 @@
 1. List Out What we are doing as the project grows
 <h1> Team Members</h1>
 <h4> Tom Marler </h4>
+<h4>Matt Barmann</h4>
 <h4> Nicolle Lenzmeier</h4># Comparing C++ to Swift 3
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
