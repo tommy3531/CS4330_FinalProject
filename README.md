@@ -3,6 +3,10 @@
 (https://code.tutsplus.com/tutorials/swift-from-scratch-an-introduction-to-classes-and-structures--cms-23197)
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+<h1> Team Members</h1>
+<h4> Tom Marler </h4>
+<h4>Matt Barmann</h4>
+<h4> Nicolle Lenzmeier</h4># Comparing C++ to Swift 3
 
 Swift 3 is a new Open Source language that was created by Apple in 2002.
 
