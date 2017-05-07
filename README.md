@@ -220,7 +220,7 @@ A class is a blueprint and is used to create objects, classes can have          
         }
     }
     nicole = Person(fn: "Nicole")
-    print(color3)
+    print(nicole)
     
     // Struct Instance
     struct Person {
