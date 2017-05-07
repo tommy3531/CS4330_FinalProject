@@ -184,7 +184,7 @@ A class is a blueprint and is used to create objects, classes can have          
     var newClass : NewClass!
     newClass = newClass()
     ```
- - **De-initializing:** Are used if the programmer needs some code to run before objects are destoryed.          Programmers can define a deinitializer by using deinit.
+ - **De-initializing:** De-initializing (deinit), is only avaiable for classes and not structures they give the programmer the ability to run some code before objects are destoryed.          Programmers can define a deinitializer by using deinit.
     ```
     class NewClass {
         var _classProperty: String
@@ -203,85 +203,128 @@ A class is a blueprint and is used to create objects, classes can have          
 ### Instance references
  - **Instance References:** In Swift Classes, Structures and Enumeration are accessed through instance         methods. Instance methods help the programmer to access and modify instance properites by having these         capabilities the programmer can change functionality related to the needs of the instance.  
     ```
-    func newFunction() {
-            
+    // Class Instance
+    class Person() {
+        // Property
+        var firstName: String
+        int() {}
     }
+    
+    let matt = Person()
+    matt.firstName = "Matt"
+
+    // Enum Instance
+    extension Person {
+        init(fn: String) {
+            self = .firstName(fn)
+        }
+    }
+    nicole = Person(fn: "Nicole")
+    print(color3)
+    
+    // Struct Instance
+    struct Person {
+        var firstName: String
+    }
+    
+    var tom = Person(firstName: "Tom")
+    
     ```
 
 ---
-### Properties (http://www.aidanf.net/learn-swift/classes)
-- Getters and Setters write your own or built in?
-- Backing Variables
-- **Store properties**
+### Properties
 
-    - Declared using var or let and given an initial value
+- **Getter and Setters:** Computed properties do not store a value, instead getters and setters are     provided to retrieve and set properties.
+    ```
+    class Person {
+        var_firstName = "Tom"
+
+        var getFirstName: String {
+            get {
+                return _firstName
+            }
+            set(newValue) {
+                _firstName = newValue
+            }
+        }
+    }
+    var person = Person()
+    // Tom
+    person.getFirstName 
     
-- **Computed properties**
-
-    - Are also declared with var but instead of an initial value you assign a         function to calculate the value.  You must delcare the type for a                computed property
+    // Set the FirstName to Nicole
+    person.getFirstName = "Nicole"
     
-- **Lazy Store Properties**
+    // Get the firstName "Nicole"
+    person.getFirstName
+    ```
 
-    - Lazy properties are always declared using the var keyword. You can declare     a stored property lazy if you want to defer their initialization.  The value     of an lazy property won’t be calculated until the first time it is accessed.     For example, say you had a stored property performs a network call to get its     initial value. Instead of having this happen when the object is initialized,     you can have it happen when the property is first accessed by declaring the      property as lazy.
+- **Backing Variables:** In addition to properties, you can use instance variables as a backing store     for the values stored in a property. Swift unifies these concepts into a single property declaration. A Swift property does not have a corresponding instance variable, and the backing store for a property is not accessed directly. This approach avoids confusion about how the value is accessed in different contexts and simplifies the property’s declaration into a single, definitive statement. All information about the property—including its name, type, and memory management characteristics—is defined in a single location as part of the type’s definition
 
-        ```
-        lazy var shippingCosts = downloadShippingData()
-        ```
+- **Store properties:** Declared using var or let and given an initial value
     
-- **Property callbacks**
-    - We can also attach a function to a stored property and have it called          whenever the value of that property is about to change. These are called         property observers.
+- **Computed properties**: Are also declared with var but instead of an initial value you assign a         function to calculate the value.  You must delcare the type for a computed property
+
+- **Lazy Store Properties**: Lazy properties are always declared using the var keyword. You can         declare     a stored property lazy if you want to defer their initialization.  The value     of an     lazy property won’t be calculated until the first time it is accessed.     For example, say you     had a stored property performs a network call to get its     initial value. Instead of having this     happen when the object is initialized,     you can have it happen when the property is first         accessed by declaring the      property as lazy.
+
+    ```
+    lazy var shippingCosts = downloadShippingData()
+    ```
+    
+- **Property callbacks** A programmer can also attach a function to a stored property and have it called          whenever the value of that property is about to change. These are called         property observers.
     There are 2 observers that you can define: willSet gets called before the        variable changes, and didSet gets called after the variable has changed.
-        ```
-        class ObservedCirlce {
-            var radius:Double = 1.0 {
-                willSet{
-                    print(”Radius is changing from \(radius) to \(newValue).”)
-                }
+    ```
+    class ObservedCirlce {
+        var radius:Double = 1.0 {
+            willSet{
+                print(”Radius is changing from \(radius) to \(newValue).”)
             }
-            var area:Double {
-                return(3.14 * radius * radius)
-            }
-       }
-        var oc = ObservedCirlce()
-        oc.radius = 2.5 // prints "Radius is changing from 1.0 to 2.5."
-        oc.area // 19.625
-        ```
+        }
+        var area:Double {
+            return(3.14 * radius * radius)
+        }
+   }
+    var oc = ObservedCirlce()
+    oc.radius = 2.5 // prints "Radius is changing from 1.0 to 2.5."
+    oc.area // 19.625
+    ```
 ---
-### Interface / Protoclo (https://medium.com/ios-os-x-development/introduction-to-protocols-in-swift-3-73f9a9be6b15)
--What does the language support?
-- What abilities does it have?
-- How is it used?
- - Protocols: 
-    - A protocol is a list of prerequisities to inherit a title, meaning a class will have to         conform to a given protoclo before it could be considered a class object.  Protocols are great     becasue they help the developer make sure they have everything they need.  Protocols are used     with TableView and if the developer wanted to add items to the TableView cells they must          adopt the protocols in the class definition
-        ```
-        class somethingViewController: UIViewController {
+### Interface / Protocols 
+
+- **What does the language support:**
+    _Protocol:_ A protocol is a list of prerequisities to inherit a title, meaning a class will have to         conform to a given protoclo before it could be considered a class object.  
+    ```
+    class somethingViewController: UIViewController {
     
-            func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-                // Target the selectedRows within the TableView
-            }
+        func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            // Target the selectedRows within the TableView
         }
-        ```
+    }
+    ```
+- **What abilities do Protocols have:** Protocols are great     becasue they help the developer make sure they have everything they need.  Protocols are used     with UITableView and if the developer wanted to add items to the TableView cells they must          adopt the protocols in the class definition
+    ```
+    protocol SomeProtocol {
     
-        ```
-        protocol SomeProtocol {
+    }
+    ```
+- **How are Protocols used:**
+    _Structure and name the protocol:_
+    ```
+    protocol Fighter {
     
-        }
-        ```
-    - Steps to define a protocol
-    1. Structure and name the protocol
-        ```
-        protocol Fighter {
+    }
+    ```
+    _Add property requirments:_
+    ``` 
+    protocol Fighter {
+        var name: String
+        var fightName: String
+    }
+    ```
     
-        }
-        ```
-    2.  Add property requirments
-        ``` protocol Fighter {
-            var name: String
-            var fightName: String
-        }
-    3. Add definite method requirements
-        ```
-        protocol Fighter {
+    _Add definite method requirements:_
+    ```
+    protocol Fighter {
         var name: String
         var fightName: String
         
@@ -289,11 +332,10 @@ A class is a blueprint and is used to create objects, classes can have          
         func punch()
         func kick()
         fucn grapple()
-        ```
+    ```
 ---
 ### Inheritance / extensions
- - Inheritance:
-    It allows a class to be defined that has a certain set of methods and properities and other classes can be     dervived from the same class.
+- **Inheritance:** It allows a class to be defined that has a certain set of methods and properities     and other classes can be     dervived from the same class.
     ```
     class Person {
         var _socialSecurityNumber: Int
@@ -307,8 +349,7 @@ A class is a blueprint and is used to create objects, classes can have          
     }
     ```
     
- - Extensions:  
-    Add new functionality to an exisiting class, structure, enumeration, or protocol.  Extensions in Swift        give the programer the ability to add computed instance properties and computed type properties, define       instance methods and type methods, provide new initializers, define subscripts, define and use new nested     types, makes an exisiting type conform to a protocol.  
+- **Extensions:** Add new functionality to an exisiting class, structure, enumeration, or protocol.      Extensions in Swift        give the programer the ability to add computed instance properties and computed type properties, define       instance methods and type methods, provide new initializers, define subscripts, define and use new nested     types, makes an exisiting type conform to a protocol.  
     ```
     extension SomeType {
             
@@ -320,50 +361,101 @@ A class is a blueprint and is used to create objects, classes can have          
     }
     ```
 ---
-### Reflection (http://www.superarts.org/blog/2016/03/28/reflection-in-swift)
-                (http://nshipster.com/mirrortype/)
-- What reflection abilities are supported
-- How is a reflection used?
-    - Reflection:
-        - Reflections are a set of functions that allow a program to inspect and modify its own structure or even hoe it works at runtime.  Although reflection are slow they give the programmer the ability to write highly dynamic code that minimizes interface and still achieves functionalitiies 
+### Reflection 
+
+- **What is a reflection?** Reflections are a set of functions that allow a program to inspect and      modify its own structure or even hoe it works at runtime.  Although reflection are slow they give    the programmer the ability to write highly dynamic code that minimizes interface and still           achieves functionalitiies. In Swift reflections are based around a struct called Mirror. The         programmer creates a minor for a particular subject and the mirror will then let the programmer     query it.
+- **What reflection abilities are supported** 
+    - _children:_ Access to the child elements
+    - _customMirror:_ 
+    - _description:_
+    - _displayStyle:_
+    - subjectType:_
+    - superclassMirror:_
+- **How is a reflection used?** 
+    ```
+    let aStructMirror = Mirror(reflection: yourStructName)
+    print(aStructMirror)
+    // prints : Mirror for yourStruct
+    ```
+ 
 
 ---
-### Memory management (https://www.raywenderlich.com/134411/arc-memory-management-swift)
-- How is it handled?
-- How does it work?
-- Garbage Collection?
-- Automatic reference counting?
-Explore Memory management: 
-```sh
-$ This is used to write an example
-$ cd dillinger
-$ npm install -d
-$ node app
-```
+### Memory management 
+ - **How does swift handle memory:** Swift uses a system of memory management called Automatic     Referenece Counting (ARC).  ARC keeps track of how many references there are to an object in the code.  When the programmer creates a new reference to a object the reference count is increased for that object.  When the reference count for that object reaches zero the memory for that object is released, this is something the ARC handles automatically
+
 ---
 ### Comparisons of references and values
-- How are values compared? (comparing two strings)
-Explain references and values: 
-```sh
-$ This is used to write an example
-$ cd dillinger
-$ npm install -d
-$ node app
-```
+- **How are values compared? (comparing two strings)** In Swift you can use the == operator to compare to strings variables or constants
+    ```
+    var helloWord = "Hello, World!"
+    var helloSwift = "Hello, Swift!"
+    
+    if helloWord == helloSwift {
+        print("The strings are equal")
+    } else {
+        print("The string are not equal")
+    }
+    
+    // Prints
+    The strings are not equal
+    ```
+    
+    ```
+    // Compare Values Return true or false
+    Equal to (a == b)
+    Not equal to (a != b)
+    Greater than (a > b)
+    Less than (a < b)
+    Greater than or equal to (a >= b)
+    Less than or equal to (a <= b)
+    
+    1 == 1   // true because 1 is equal to 1
+    2 != 1   // true because 2 is not equal to 1
+    2 > 1    // true because 2 is greater than 1
+    1 < 2    // true because 1 is less than 2
+    1 >= 1   // true because 1 is greater than or equal to 1
+    2 <= 1   // false because 2 is not less than or equal to 1
+    
+    Logical NOT (!a)
+    Logical AND (a && b)
+    Logical OR (a || b)
+    
+    ```
+
 ---
-### NUll/nil references
-- Which does the language use? (null,nil)?
-- Does the language have features for handling null/nil references?
-Explain NULL references: 
+### Null/nil references
+- **Which does the language use? (null,nil)?** Any time you need a variable that can be null the programmer can use the "?" operator to identify a variable whose value is optional.  A variable declared as an optional can be set to nil to represent an absence value.
+
+- **Does the language have features for handling null/nil references?** Swift supports handling null and nil references by using optionals.
+    ```
+    var age: Int? = 2
+    age = nil
+    ```
+    If an optional is not given an initial value it is automatically set to nil and the programmer can always check forthe presence of a value by comparing the optional to nil
+    ```
+    if (age != nil) {
+        // Do something with age
+    }
+    ```
+
 ---
 ### Errors and execption handling
-Explain Errors: 
-```sh
-$ This is used to write an example
-$ cd dillinger
-$ npm install -d
-$ node app
-```
+- **Error handling:** In swift error handling is the process of responding to and recovering from error condition within a program.  In swift programmers can throw and catach errors at runtime
+    - _Throwing Errors:_ Throwing an error lets the programmer indicate that something unexpected         happened and can not contiue to execute.
+        ```
+        func canThrowErrors() throws -> String
+        ```
+    - _Catching Errors:_ Catching an error lets the programmer indicate that something unexpected happend, by catching the error the programmer gives the program the ability to handle the error
+        ```
+        do {
+            try expression
+                statements
+        } catch pattern 1 {
+            statements
+        } catch pattern 2 where condition {
+            statements
+        }
+        ```
 ---
 ### Closures
  - **Closures:** Are self contained chunks of code that can be passed around they can capture and store references to any constant or variable in which they are defined
@@ -394,19 +486,37 @@ $ node app
             ```
 ---
 ### Implementation of listeners and event handlers
-Explain listeners:
-Explain event handlers:
+- **Event Handlers (action handlers):** Is called when a user taps a certain button on the interface. 
+    ```
+    @IBAction func btnPressed(_ sender: Any) {
+        let alert = UIAlertController(
+        title: "Howdy!", message: "You tapped me!", preferredStyle: .Alert)
+        alert.addAction(
+            UIAlertAction(title: "OK", style: .Cancel))
+        self.present(alert, animated: true)
+    }
+    ```
 
 ---
 ### Singleton
-- How is a singleton implemented?
-- Can it be made thread-safe?
-- Can the singleton instance be lazily instantiated?
- - **Singleton:** A singleton guarantees that only one instance of a class is instantiated. When you create a singleton the programmer is giving the project global access to the singleton object.  
+- **How is a singleton implemented?** The programmer will create a class inside the curly brackets of the class they will create a static constant named sharedAPIAccess which contains an instance of the class.  By using static constant only one instance will ever exist within in the program
     ```
-    let sharedNetworkManager = NetowrkManager
-    ```
+    class APIAccess {
+        
+    }
 
+    // Only one instance will ever exist
+    static let sharedAPIAccess = APIAccess() 
+    ```
+- **Can it be made thread-safe** The programmer must ensure that the singleton is only instantiated once not matter the caller thread, t and be 
+- **lazily instantiated?** The lazy initializer for a global variable is run the first time that global variable is accessed and is lanuched as dispatch_once to make sure that the initializer is atomic.  This enables a neat way to use 
+    ```
+    class APIAccess {
+        
+    }
+    // This will be lazy loaded when first called and is thread safe
+    let sharedAPIAccess = APIAccess() 
+    ```
 ---
 ### Procdural Programming
 - Does the language support procedural programming?
