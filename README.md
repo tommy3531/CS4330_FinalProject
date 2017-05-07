@@ -160,7 +160,7 @@ Within a given program a program needs to use types to store different informati
     - _Value Type:_ Are alwyas copied when they are passed around, examples of values types in Swift are          structs, enum and tuples
 
 ---
-### Classes (http://rshankar.com/difference-between-struct-and-class-in-swift/)
+### Classes 
 A class is a blueprint and is used to create objects, classes can have           properties to store values and methods to add behavior.  
 
  - **Defining a class:** The class keyword indicates that you are defining a class of a particular type.  The            implementation of the class is wrapped in a pair of curly braces.  Inside the curly braces, the        programmer can define properites.  Properites within a class can either be var or let, var     keyword to     define a variable and the let var is used to define a constant property.
