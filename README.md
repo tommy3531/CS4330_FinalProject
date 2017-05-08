@@ -88,7 +88,7 @@ Swift 3 is a new Open Source language that was created by Apple in 2002.
         import UIKit.NSData
         ```
 - **How are name spaces implemented in C++?** Typically, you declare a namespace in a header     file. If your function implementations are in a separate file, then qualify the function     names.
-- **How are names spaces used in C++?** Namespaces are used to organize code into logical groups and to prevent name collisions that can occur especially when your code base includes multiple libraries. Code: The following example shows  namespace declaration and three ways that code outside the namsespace can access their members.
+- **How are names spaces used in C++?** Namespaces are used to organize code into logical groups and to prevent name collisions that can occur especially when your code base includes multiple libraries. Code: The following example shows  namespace declaration and three ways that code outside the namsespace can access their members.
     ```
     namespace DoSomething   
     {           
@@ -185,7 +185,7 @@ Within a given program a program needs to use types to store different informati
         ```
     - _Value Type:_ Are alwyas copied when they are passed around, examples of values types in Swift are          structs, enum and tuples
 - **What Types does C++ Support**
-    - What is HERE???
+    - Need information do not have access to picture in the textEdit on my computer
 - **Are both reference and value types supported in C++** Yes, both reference and value types are supported by C++. C++ allows you to override the assignment operator to do anything your heart desires, however the default (and most common) choice is to copy the value.
 - **Can new value types be created in C++?** Yes. User-defined types are allowed. Just like you could have a 65 as a short int or it could be represented as an A as a char.
 
