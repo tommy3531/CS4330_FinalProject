@@ -448,6 +448,17 @@ Delete b;
         // Employee has inherited all the properities from the Parent class callled Person
     }
     ```
+- **Inheritance C++**
+- Base syntax is: classDerivedClass : accessSpecifier BaseClass
+    ```
+    Accessing Base class members           |public         | protected              |private
+    From Base class                        | Yes           |Yes                 |Yes
+    From object of a Base class            | Yes           |No                  |No
+    From Derived classes                   |Yes (As Public)|Yes (As Protected)  |No
+    From object of a Derived class         | Yes           |No                  |No
+    From Derived class of Derived Classes  |Yes (As Public)|Yes (As Protected)  |No
+```
+
     
 - **Extensions in Swift:** Add new functionality to an exisiting class, structure, enumeration, or protocol.      Extensions in Swift        give the programer the ability to add computed instance properties and computed type properties, define       instance methods and type methods, provide new initializers, define subscripts, define and use new nested     types, makes an exisiting type conform to a protocol.  
     ```
@@ -484,7 +495,10 @@ Delete b;
 ---
 ### Memory management 
  - **How does Swift handle memory:** Swift uses a system of memory management called Automatic     Referenece Counting (ARC).  ARC keeps track of how many references there are to an object in the code.  When the programmer creates a new reference to a object the reference count is increased for that object.  When the reference count for that object reaches zero the memory for that object is released, this is something the ARC handles automatically
- - **How does C++ handle memory** NOTHING GIVEN
+ - **How does C++ handle memory** 
+    - Because it has roots from C it doesn’t have a true garbage collector
+	- Uses RAII where everything is owned by an object and after an “appropriate time” the object’s destructor will cause the release of the resource 
+	- Both, auto_ptr and shared_ptr use reference counting and help manage lifetime of allocated memory
 ---
 ### Comparisons of references and values
 - **How are values compared in Swift? (comparing two strings)** In Swift you can use the == operator to compare to strings variables or constants
@@ -523,7 +537,10 @@ Delete b;
     Logical OR (a || b)
     
     ```
-- **How are values compared in C++? (comparing two strings)** NOTHING GIVEN
+- **How are values compared in C++? (comparing two strings)** 
+    - Because of its basic roots c++ only has the “==” operator 
+	- This is used for all variable types including strings
+	- Some other basic operators are !=, <, > , and other basic operators used in most languages
 ---
 ### Null/nil references
 - **Which does Swift use? (null,nil)?** Any time you need a variable that can be null the programmer can use the "?" operator to identify a variable whose value is optional.  A variable declared as an optional can be set to nil to represent an absence value.
@@ -539,8 +556,9 @@ Delete b;
         // Do something with age
     }
     ```
-- **Which does C++ use? (null,nil)?** NOTHING GIVEN
-- **Does C++ have features for handling null/nil references?** NOTHING GIVEN
+- **Does C++ have features for handling null/nil references?** 
+    - C++ only supports the use of NULL and not nil
+	- Does not let you reference NULL values, any references have to be of existing objects or values
 ---
 ### Errors and execption handling
 - **Error handling in Swift:** In swift error handling is the process of responding to and recovering from error condition within a program.  In swift programmers can throw and catach errors at runtime
@@ -559,7 +577,10 @@ Delete b;
             statements
         }
         ```
-- **Error handling in C++:** NOTHING GIVEN
+- **Error handling in C++:**
+    - C++ is very similar to java for exception handling
+    - Uses throw, catch and try techniques
+    - You are able to create your own exceptions to be caught and print out your own message 
 ---
 ### Closures
  - **Closures in Swift:** Are self contained chunks of code that can be passed around they can capture and store references to any constant or variable in which they are defined
@@ -588,7 +609,14 @@ Delete b;
             addOne() // number is 4
             printNumber() // 4
             ```
- - **Closures in C++:**
+ - **Lamdba in C++:**
+    - Lambdas are used in c++ to bridge gap between procedural programming to new functional programming ability
+	- auto func = [] () { cout << "Hello world"; };
+func(); // now call the function
+	- ‘[]’ is used to indicate that we are creating a lambda
+	- There are no parameters for our lambda
+	- And if return type can be assumed it doesn’t need to be there
+	- Line 2 acutally implements the lambda
 ---
 ### Implementation of listeners and event handlers
 - **Event Handlers (action handlers) in Swift:** Is called when a user taps a certain button on the interface. 
@@ -601,7 +629,10 @@ Delete b;
         self.present(alert, animated: true)
     }
     ```
-- **Event Handlers (action handlers) in C++:** NOTHING GIVEN
+- **Event Handlers (action handlers) in C++:**
+    - Listerners are very similar to java’s in a sense that you have an observer that you assign to an object
+	- click_event::listener listener_1,listener_2;
+	- However c++ doesn’t specifically address events
 ---
 ### Singleton
 - **How is a Singleton implemented in Swift?** The programmer will create a class inside the curly brackets of the class they will create a static constant named sharedAPIAccess which contains an instance of the class.  By using static constant only one instance will ever exist within in the program
@@ -622,9 +653,18 @@ Delete b;
     // This will be lazy loaded when first called and is thread safe
     let sharedAPIAccess = APIAccess() 
     ```
-- **How is a Singleton implemented in C++?** NOTHING GIVEN
-- **Can it be made thread-safe in C++** NOTHING GIVEN
-- **lazily instantiated in Swift?** NOTHING GIVEN
+- **How is a Singleton implemented in C++?** 
+    - You create a singleton class
+	- Create a singleton instance
+	- Create a private singleton method
+	- Then create a method for getInstance that will create the singleton and return it
+- **Can it be made thread-safe in C++** 
+    -  Applying this will create a guard on the block
+    - If block not locked then block executes and then places lock
+    - If lock exists then block is not allowed to execute
+- **lazily instantiated in C++?** 
+    - Lazy implementation is the preferred method of using singletons
+
 ---
 ### Procdural Programming
 - **Does Swift support procedural programming?** There are two kinds of procedures in Swift atomic which describes how an external program can be executed and compound procedures which consist of a sequence of Swift script statements.  
@@ -646,7 +686,8 @@ Delete b;
         b = bar(c);    // c is an input to bar
     }
     ```
-- **Does C++ support procedural programming?** NOTHING GIVEN
+- **Does C++ support procedural programming?** 
+    - Because of its roots in c c++ is built on procedural programming
 ---
 ### Functional Programming
 - Does the language support functional programming?
@@ -670,10 +711,19 @@ Delete b;
         // Higher Order Functions
         map(_:), filter(_:), reduce(_:_:)
         ```
- - **Functional Programming in C++:** NOTHING GIVEN
+ - **Functional Programming in C++:** 
+    - Like the info stated in the lambda section, lambdas are used to help implement functional programming because initially c++ couldn’t do this
 ---
 ### Multithreading
 - **Multithreading in Swift:** Swift uses Grand Centeral Dispatch which is paramount for creating responsive apps with smooth animations and transitions.  Multithreading allows the processor to create concurrent threads in which it can switch between so multiple tasks can be executed at the same time. For example if the programmers does not want the User Inferface to freeze up when the user is saving something they would use a background process so two things can be executed at the same time on that thread.  Grand Center dispatch provides a way to interface with threads via queues.  
     - _Queues:_ Queues are managed through DispatchQueue, the programmer can either execute tasks in order which is considered a serial queue or along side each other which is a concurrent queue.
     - Multithreading is great for returning data back from a rest call and displaying it in the UI.   bBy using multithreading the main queue can show the UI and dowloading the data will be handled by the Global queue so it can run in the background.  This techique is what I used to download JSON from a Rest call and displayed the parsed JSON in a table view cell.  
-- - **Multithreading in C++:** NOTHING GIVEN
+- **Multithreading in C++:** 
+    - C++ offers a “join()” function that will safely let threads join
+	- Main thread will wait until child is finished
+	- Once a thread has been joined it is no longer “joinable
+	- To check to see if it’s joinable you can use “joinable()”
+	- You can also detach a thread using “detach()” 
+	- This makes the parent and child threads dependent of each other
+	- You can also pass arguments to threads to be implemented 
+You can also get the id of each thread
