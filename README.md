@@ -190,22 +190,22 @@ Within a given program a program needs to use types to store different informati
 ```
     | Type	              |Typical Bit Width	  |Typical Range        |
     |---------------------|--------------------|---------------------| 
-    |char	              |1byte               |	-128 to 127 or 0 to 255|
+    |char	              | 1byte              |	-128 to 127 or 0 to 255|
     |unsigned char        | 1byte              |	0 to 255|
-    |signed char          |1byte               |	-128 to 127|
+    |signed char          | 1byte              |	-128 to 127|
     |int                  |	4bytes             |	-2147483648 to 2147483647|
     |unsigned int         |	4bytes             |	0 to 4294967295|
-    |signed int	          |4bytes              |	-2147483648 to 2147483647|
-    |short int	          |2bytes	           |-32768 to 32767|
+    |signed int	          | 4bytes             |	-2147483648 to 2147483647|
+    |short int	          | 2bytes	           |-32768 to 32767|
     |unsigned short int   |	2bytes             |	0 to 65,535|
-    |signed short int     |	     2bytes        |	-32768 to 32767|
-    |long int	          |              8bytes|	-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807|
+    |signed short int     | 2bytes             |	-32768 to 32767|
+    |long int	          | 8bytes             |	-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807|
     |signed long int      |	8bytes	           |-9,223,372,036,854,775,808 to             9,223,372,036,854,775,807|
     |unsigned long int    |	 8bytes            |	0 to 18,446,744,073,709,551,615|
-    |float	              |4bytes              |	+/- 3.4e +/- 38 (~7 digits)|
-    |double	              |8bytes              |	+/- 1.7e +/- 308 (~15 digits)|
+    |float	              | 4bytes             |	+/- 3.4e +/- 38 (~7 digits)|
+    |double	              | 8bytes             |	+/- 1.7e +/- 308 (~15 digits)|
     |long double          |	8bytes             |	+/- 1.7e +/- 308 (~15 digits)|
-    |wchar_t	          |2 or 4 bytes        |	1 wide character|
+    |wchar_t	          | 2 or 4 bytes       |	1 wide character|
 ```
 
 - **Are both reference and value types supported in C++** Yes, both reference and value types are supported by C++. C++ allows you to override the assignment operator to do anything your heart desires, however the default (and most common) choice is to copy the value.
