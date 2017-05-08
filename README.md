@@ -1,6 +1,4 @@
 # Comparing C++ to Swift 3
-(https://iswift.org/cookbook/declare-a-closure)
-(https://code.tutsplus.com/tutorials/swift-from-scratch-an-introduction-to-classes-and-structures--cms-23197)
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 <h1> Team Members</h1>
@@ -35,24 +33,31 @@ Swift 3 is a new Open Source language that was created by Apple in 2002.
 ---
 
 # Language Purpose
-- **Why was Swift language created?**
-    - Swift was not created for one specific purpose, Apple wanted a language that developers could use to write IOS apps as well as system programming or scaling up to cloud services.  According to Apple, Swift code must be
-        - _Safe:_
-        - _Fast:_
-        - _Expressive:_
+- **Why was Swift created?**
+    - When apple decided to create Swift they wanted to provide a language for programmers that was fast and more effecient.  Swift was not created for one specific purpose. Apple wanted a language that developers could use to write fast and effeicent IOS apps using Xcode. According to Apple, Swift code must be
+        - _Safe:_ Swift Objects can never be nil and trying to make them nil will throw a complie error.  For cases where nil is appropriate programmers can use optionals which is represented by using a ?.  By using optionals they force the programmer to safetly deal with nil values so the complier can safetly handle it.     
+        - _Fast:_ Swift allows and encourages the use of constants much more.  By using optionals ensures that certains pointers can never be nil, so the complier can omit nil checks.  Also, objects in Swift can call one another which is one reason why Swift is faster then Objective-C
+        - _Expressive:_ Swift classes are defined in a single file, programmers do not need to use the import statement for classes.  Also there is no more alloc and init when the programmers creates an object from a class.
 - **What problems is Swift trying to address?**
-- 
-- Is the language a reaction to a previous language or a replacement for another language?
+    - Apple set out to create a language that was easy to use compared to Objective-C where programmers had to manage memory and didnt have features like interred typing.  Swift addresses these issues and many more.
+    - _Memory Allocation:_ One of Swifts biggest advantage is that it does Automatic garbage collection, which means that Swift will automatically take care of allocating and deallocating memory. This makes it easier for the programmer becasue they do not have to deal with memory management.
+    - _Inferred Typing:_ Programmers do not have to spend time definning what types of variables they are using
+    - _Less Error Prone:_ Because optionals are built-in and if used correctly can produce less errors.
+    - Interpreted languages such as Ruby and Pythong let the programmer develop software more quickly because they can handle tasks in the background that they would have to handle on their own Swift appears to change this.  
+- **Is the language a reaction to a previous language or a replacement for another language?**
+    - Before Swift, IOS developers used Objective-C which is a laugage Apple spent years refining.  Objective-C is built on top the LLVM language complier.  Swift was created to fix or make life easier on the programmer with features like Automatic Reference Counting
 ---
 
 # Unique features
-- **Unique features of Swift:**
-```sh
-$ This is used to write an example
-$ cd dillinger
-$ npm install -d
-$ node app
-```
+- **Unique features of Swift:** 
+    - _Playgrounds:_ When a playground is created in Swift the programmer can write code in the playground and see results instantly.  This makes learning and exploring the Swift language very enjoyable becasue the programmer is given instant feedback. 
+    - _Immutability:_ In Objective-C this is a mess in swift it takes very little effort with     var and let
+        ```
+        var dateString = formatter.stringFromData(date)
+        let dateString = formatter.stringFromDate(date)
+        ```
+    - _Open Source:_ The source code for Swift is Open Source meaning anyone can analyze the source and even make suggestions.  
+    - Optionals - These come built-in and are complier driven so that crashes are not at all possible if used correctly. 
 ---
 # Name spaces
  - **How are name spaces implemented in Swift?**
@@ -363,9 +368,9 @@ A class is a blueprint and is used to create objects, classes can have          
 ---
 ### Reflection 
 
-- **What is a reflection in Swift?** Reflections are a set of functions that allow a program to inspect and      modify its own structure or even hoe it works at runtime.  Although reflection are slow they give    the programmer the ability to write highly dynamic code that minimizes interface and still           achieves functionalitiies. In Swift reflections are based around a struct called Mirror. The         programmer creates a minor for a particular subject and the mirror will then let the programmer     query it.
+- **What is a reflection in Swift?** Reflections are a set of functions that allow a program to inspect and      modify its own structure or even hoe it works at runtime.  Although reflection are slow they give    the programmer the ability to write highly dynamic code that minimizes interface and still           achieves functionalitiies. In Swift reflections are based around a struct called Mirror. The         programmer creates a mirorr for a particular object and the mirror will then let the programmer     query it.
 - **What reflection abilities are supported in Swift** 
-    - _children:_ Access to the child elements
+    - _children:_ 
     - _customMirror:_ 
     - _description:_
     - _displayStyle:_
@@ -519,7 +524,25 @@ A class is a blueprint and is used to create objects, classes can have          
     ```
 ---
 ### Procdural Programming
-- **Does Swift support procedural programming?**
+- **Does Swift support procedural programming?** There are two kinds of procedures in Swift atomic which describes how an external program can be executed and compound procedures which consist of a sequence of Swift script statements.  
+    - _Declare a procedure:_ A procedure declaration defines the names of a procedure and its input and output paramenters.  Inputs are specified ot the right of the function name and outputs are specified to the left. Below a procedure called myproc is declared and it has two inputs and two ouputs
+    ```
+    (type3 out1, type4 out2) myproc (type1 in1, type2 in2)
+    ```
+    -  _Atomic Procedures:_ Specifies how to invoke an external executable program, and how logical data types are mapped to command line arguments.  Below procedure specifies that myproc invokes an executable called myapp, passing the values of i, s and the filename of bf as command line arguments
+    ```
+    app (binaryfile bf) myproc (int i, string s="foo") {
+        myapp i s @filename(bf);
+    }
+    ```
+    - _Compound Procedures:_ 
+    ```
+    (type2 b) foo_bar (type1 a) {
+        type3 c;
+        c = foo(a);    // c holds the result of foo
+        b = bar(c);    // c is an input to bar
+    }
+    ```
 ---
 ### Functional Programming
 - Does the language support functional programming?
@@ -545,11 +568,6 @@ A class is a blueprint and is used to create objects, classes can have          
         ```
 ---
 ### Multithreading
-- **Threads or thread-like abilities**
-- **How is multitasking accomplished?**
-```sh
-$ This is used to write an example
-$ cd dillinger
-$ npm install -d
-$ node app
-```
+- **Multithreading in Swift:** Swift uses Grand Centeral Dispatch which is paramount for creating responsive apps with smooth animations and transitions.  Multithreading allows the processor to create concurrent threads in which it can switch between so multiple tasks can be executed at the same time. For example if the programmers does not want the User Inferface to freeze up when the user is saving something they would use a background process so two things can be executed at the same time on that thread.  Grand Center dispatch provides a way to interface with threads via queues.  
+    - _Queues:_ Queues are managed through DispatchQueue, the programmer can either execute tasks in order which is considered a serial queue or along side each other which is a concurrent queue.
+    - Multithreading is great for returning data back from a rest call and displaying it in the UI.   bBy using multithreading the main queue can show the UI and dowloading the data will be handled by the Global queue so it can run in the background.  This techique is what I used to download JSON from a Rest call and displayed the parsed JSON in a table view cell.  
