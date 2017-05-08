@@ -114,16 +114,16 @@ Within a given program a program needs to use types to store different informati
     - _Character:_ This is a single-character string literal. Example, "C"
     - _Optional:_ This represents a variable that can hold either a value or no value
     - _Bound Values_
-        |Type     |Typical Bit Width|Typical Range|
-       |----------|:--------------:|------------:|
-       |Int8      | 1 byte         |-127 to 127  |
-       |UInt8     | 1 byte         |0 to 255     |
-       |Int32     | 4 btyes        |-2147483648 to 2147483647|              
-       |UInt32    | 4 bytes        |0 to 4294967295 |
-       |Int64     | 8 bytes        |-9223372036854775808 to 9223372036854775807|
-       |UInt64    | 8 bytes        |0 to 18446744073709551615|
-       |Float     | 4 bytes        |1.2E-38 to 3.4E+38 (~6 digits)|
-       |Double    | 8 bytes        |2.3E-308 to 1.7E+308 (~15 digits)|
+        Type     | Typical Bit Width |Typical Range|
+       ---------- | ----------------- | ------------ |
+       Int8      | 1 byte         |-127 to 127  |
+       UInt8     | 1 byte         |0 to 255     |
+       Int32     | 4 btyes        |-2147483648 to 2147483647|              
+       UInt32    | 4 bytes        |0 to 4294967295 |
+       Int64     | 8 bytes        |-9223372036854775808 to 9223372036854775807|
+       UInt64    | 8 bytes        |0 to 18446744073709551615|
+       Float     | 4 bytes        |1.2E-38 to 3.4E+38 (~6 digits)|
+       Double    | 8 bytes        |2.3E-308 to 1.7E+308 (~15 digits)|
     - _Type Aliases_:  Gives the programmer the ability to create a new name for an exisitng type
         ```sh
         typealias newName = type
@@ -185,6 +185,7 @@ Within a given program a program needs to use types to store different informati
         ```
     - _Value Type:_ Are alwyas copied when they are passed around, examples of values types in Swift are          structs, enum and tuples
 - **What Types does C++ Support**
+    ```
     | Type	   |Typical Bit Width	|Typical Range|
     |----------|:------------------:|---------------------:| 
     |char	   |1byte               |	-128 to 127 or 0 to 255|
@@ -203,6 +204,7 @@ Within a given program a program needs to use types to store different informati
     |double	|8bytes|	+/- 1.7e +/- 308 (~15 digits)|
     |long double|	8bytes|	+/- 1.7e +/- 308 (~15 digits)|
     |wchar_t	|2 or 4 bytes|	1 wide character|
+    ```
 
 - **Are both reference and value types supported in C++** Yes, both reference and value types are supported by C++. C++ allows you to override the assignment operator to do anything your heart desires, however the default (and most common) choice is to copy the value.
 - **Can new value types be created in C++?** Yes. User-defined types are allowed. Just like you could have a 65 as a short int or it could be represented as an A as a char.
